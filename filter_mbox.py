@@ -2,35 +2,35 @@ import mailbox
 import csv
 from email import message_from_string
 
-# Funktion zum Extrahieren des Textes aus der E-Mail (behandelt auch HTML-Inhalte)
+# function to extract text from the email (also handles HTML content)
 def extract_text_from_email(msg):
     if msg.is_multipart():
         for part in msg.walk():
             content_type = part.get_content_type()
-            if content_type == "text/plain":  # Nur Klartext extrahieren
+            if content_type == "text/plain":  # xtract only plain text
                 return part.get_payload(decode=True).decode(errors="ignore")
     else:
         payload = msg.get_payload(decode=True)
         if payload:
             return payload.decode(errors="ignore")
-    return ""  # Falls keine Nutzlast oder Text gefunden wird
+    return ""
 
-# Dateipfade (passen Sie den Pfad zur mbox-Datei an)
-mbox_file = "/Users/dieulinhnguyen/Documents/INBOX.partial.mbox/mbox"  # Ersetzen Sie dies mit dem echten Pfad
+
+mbox_file = "/path/to/folder/with/downloads"  # path to folder
 csv_file = "gefilterte_emails.csv"  # Ziel-CSV-Datei
 
-# Schlüsselwort für die Filterung
+# keyowrd for filter
 keyword = "bewerbung".lower()
 
-# MBOX-Datei öffnen
+# MBOX-Datei 
 mbox = mailbox.mbox(mbox_file)
 
-# CSV-Datei erstellen und die Daten hineinschreiben
+# CSV-Datei 
 with open(csv_file, "w", newline="", encoding="utf-8") as csvfile:
     writer = csv.writer(csvfile)
     writer.writerow(["Datum", "Absender", "Empfänger", "Betreff", "Nachricht"])  # Spaltenüberschriften
 
-    # Durch alle E-Mails im MBOX-Postfach iterieren
+  
     for message in mbox:
         date = message["date"] if message["date"] else "Unbekannt"
         sender = message["from"] if message["from"] else "Unbekannt"
