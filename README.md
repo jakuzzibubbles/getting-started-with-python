@@ -1,7 +1,3 @@
-## Project Overview
-
-In this project, I aimed to filter and extract specific emails from my inbox, particularly those containing a keyword, such as "bewerbung" (application), from a large set of emails stored in an MBOX file.
-
 ### Problem
 I had a collection of emails in the MBOX format, and I needed to filter out emails that contained a particular keyword in either the subject or the body of the email. The goal was to extract these emails and store them in a structured format, such as CSV, for further analysis and reference.
 
