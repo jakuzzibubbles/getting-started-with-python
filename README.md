@@ -1,8 +1,8 @@
-### Problem
+### Problem 😵‍💫
 I had a few large collection of emails in the MBOX format, and I needed to filter out emails that contained a particular keyword in either the subject or the body of the email. The goal was to extract these emails and store them in a structured format, such as CSV, for further analysis and reference.
 
 ### Solution
-I used Python to create a script that processes the MBOX file and extracts the relevant emails. Key steps:
+I used Python to create a script that processes the MBOX file, that i downloaded from my apple mail and extracts the relevant emails. Key steps:
 
 1. **Extracting Emails from MBOX File**: Using the `mailbox` module, the script reads the MBOX file and iterates through each email message.
    
@@ -12,7 +12,7 @@ I used Python to create a script that processes the MBOX file and extracts the r
 
 4. **Saving Data to CSV**: After filtering and extracting the necessary data, the script writes the relevant information into a CSV file for easy access and analysis.
 
-### Outcome
+### Outcome 🤓
 The filtering process was successfully completed, and a CSV file containing only the relevant emails was generated. This allowed me to isolate and review the specific emails that matched the criteria, enabling a more efficient way to manage and process my inbox.
 
 
