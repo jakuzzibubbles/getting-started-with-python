@@ -14,3 +14,28 @@ I used Python to create a script that processes the MBOX file and extracts the r
 
 ### Outcome
 The filtering process was successfully completed, and a CSV file containing only the relevant emails was generated. This allowed me to isolate and review the specific emails that matched the criteria, enabling a more efficient way to manage and process my inbox.
+
+
+### **Processing and Extracting Emails -> Learnings**  
+
+#### **Extracting Email Content**   
+- processed multipart emails by iterating through different content types.  
+- used `BeautifulSoup` to extract text from HTML content, removing unnecessary formatting.  
+- handled "quoted-printable" encoding with the `quopri` module to correctly decode email bodies.  
+
+#### **Handling Encoding Issues**   
+- a preprocessing step was added to ensure extracted text contained only printable ASCII characters.  
+- error handling mechanisms were implemented to skip problematic emails instead of terminating the script.  
+
+#### **Filtering Emails by Keyword**   
+- converted both the subject and body to lowercase for case-insensitive matching.  
+- checked if the keyword appeared in either field before extracting the email.  
+
+#### **Storing Filtered Results**   
+- extracted key fields: date, sender, recipient, subject, and body.  
+- saved the filtered data into a CSV file for easy access and further analysis.  
+
+#### **Troubleshooting and Optimization**   
+- encoding errors were resolved by ensuring proper decoding of email content.  
+- virtual environment issues and incorrect Python installations were addressed to enable smooth execution.  
+- error handling was improved to ensure robustness, allowing the script to continue running even when encountering problematic emails.  
